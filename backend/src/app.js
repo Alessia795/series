@@ -18,21 +18,33 @@ const database = knex({
     useNullAsDefault: true
 });
 
-//obtener las series
-app.get('/series', async (req, res) => {
+//obtener todas las series
+app.get('/series/', async (req, res) => {
     const series = await database('series').select('*');
     res.status(200).json(series);
 })
 
-//obtener las temporadas
-app.get('/temporadas', async (req, res) => {
-    const temporadas = await database('temporadas').select('*');
+//obtener las series por id
+app.get('/series/:id', async (req, res) => {
+    const series = await database('series').where('id', req.params.id).first();
+    res.status(200).json(series);
+})
+
+//obtener las temporadas por id de la serie
+app.get('/series/:id/temporadas', async (req, res) => {
+    const temporadas = await database('temporadas').where('serie_id', req.params.id).select('*');
     res.status(200).json(temporadas);
 })
 
-//obtener los episodios
-app.get('/episodios', async (req, res) => {
-    const episodios = await database('episodios').select('*');
+//obtener las temporadas por id
+app.get('/temporadas/:id', async (req, res) => {
+    const temporada = await database('temporadas').where('id', req.params.id).first();
+    res.status(200).json(temporada);
+})
+
+//obtener los episodios por id
+app.get('/temporadas/:id/episodios/', async (req, res) => {
+    const episodios = await database('episodios').where('temporada_id', req.params.id).select('*');
     res.status(200).json(episodios);
 })
 
