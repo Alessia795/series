@@ -1,0 +1,268 @@
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1a1a2e;
+    padding: 20px;
+}
+
+.title {
+    color: #d2af31;
+    text-align: center;
+    text-shadow: 0 0 8px #a68510;
+    font-size: 28px;
+    letter-spacing: 6px;
+    margin: 20px 0;
+}
+
+.block-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+    justify-content: center
+}
+
+.card { 
+    background-color: #16213e;
+    border-radius: 10px;
+    width: 250px;
+    border-radius: 30px;
+    border: 1px solid  #a68510;
+    padding: 5px 20px;
+    margin-bottom: 8px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.card-img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-genre {
+    color: #a8dadc;
+    font-size: 12px;
+    margin: 0 auto;
+    padding: 5 20px;
+}
+
+.card-description {
+    color: #e0e0e0;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.season-genre {
+    color: #a8dadc;
+    font-size: 14px;
+    padding: 0 11%;
+}
+
+.season-description {
+    color: #e0e0e0;
+    font-size: 15px;
+    padding: 0 11%;
+}
+
+.columnas {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+.temporada-card {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.temporada-titulo {
+    color: #d2af31;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #d2af31;
+    width: 300px;
+    padding-bottom: 15px;
+}
+
+.info-card {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.episodio-numero {
+    color: #ffffff30;
+    font-size: 13px;
+    min-width: 25px;
+    padding-top: 3px;
+}
+
+.episodio-titulo {
+    color: rgb(182, 205, 248);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.episodio-duracion {
+    color: #d2af31;
+    font-size: 12px;
+}
+
+.episodio-descripcion {
+    color: #a0a0b0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.columna-izquierda {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.columna-derecha {
+    flex: 1;
+}
+
+.login-card {
+    display: grid;
+    background-color: #16213e;
+    width: min(90%, 600px);
+    text-align: center;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #a68510;
+    gap: 15px;
+    justify-content: center;
+}
+
+.login-titulo {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 30px;
+    
+}
+
+.login-input {
+    background-color: #e3eeee;
+    width: 100%;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.login-btn {
+    background-color: #d2af31;
+    width: 90px;
+    color: #1a1a2e;
+    border-radius: 8px;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-error {
+    color: #e94560;
+    text-align: center;
+    font-size: 13px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.navbar-username {
+    color: white;
+    font-size: 14px;
+}
+
+.navbar-boton {
+    background-color: transparent;
+    border: 1px solid #d2af31;
+    color: #d2af31;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-anadir {
+    background-color: #d2af31;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn-anadir:hover {
+    background-color: rgb(107, 200, 107);
+}
+
+.card-botones {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.btn-editar {
+    background-color: #0f3460;
+    color: white;
+    border: 1px solid #d2af31;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-editar:hover {
+    background-color: #d5bb5c;
+}
+
+.btn-borrar {
+    background-color: #0f3460;
+    color: white;
+    border: 1px solid #e94560;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-borrar:hover {
+    background-color: rgb(242, 94, 94);
+}
+
