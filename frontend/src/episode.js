@@ -1,12 +1,26 @@
 import axios from 'axios';
+import {
+    rol,
+    username
+} from './verifyUser.js';
+
+const params = new URLSearchParams(window.location.search);
+const serieId = params.get('serieId');
+const temporadaId = params.get('temporadaId');
 
 window.readEpisodes = function () {
-    const params = new URLSearchParams(window.location.search);
-    const serieId = params.get('serieId');
-    const temporadaId = params.get('temporadaId');
     axios.get('http://localhost:8081/series/' + serieId)
         .then((response) => {
             const serie = response.data;
+            const anadir = document.getElementById('addEpisode');
+
+            if (rol === 'admin') {
+                const botonAnadir = document.createElement('button');
+                botonAnadir.classList.add('btn-anadir');
+                botonAnadir.textContent = 'Añadir episodio';
+                botonAnadir.onclick = () => window.location.href = 'addEpisode.html?id_serie=' + serieId + '&id_temporada=' + temporadaId;
+                anadir.appendChild(botonAnadir);
+            }
             document.getElementById('serie-titulo').textContent = serie.titulo;
             document.getElementById('serie-genero').textContent = serie.genero;
             document.getElementById('serie-descripcion').textContent = serie.descripcion;
@@ -39,7 +53,32 @@ window.readEpisodes = function () {
                         <p class="episodio-descripcion">${episodio.descripcion}</p>
                     </div>
                 `
+                if (rol === 'admin') {
+                    const botones = document.createElement('div');
+                    botones.classList.add('card-botones');
+                    botones.innerHTML = `
+                    <div class="container-btn">
+                        <button class="btn-editar" onclick="editarEpisodio(${episodio.id})">Editar</button>
+                        <button class="btn-borrar" onclick="borrarEpisodio(${episodio.id})">Borrar</button>
+                    </div>                        
+                    `;
+
+                    tarjeta.appendChild(botones);
+                }
                 episodios.appendChild(tarjeta);
             });
         })
+}
+
+window.borrarEpisodio = function (id) {
+    if (confirm('¿Seguro que quieres borrar este episodio?')) {
+        axios.delete('http://localhost:8081/episodios/' + id)
+            .then(() => {
+                window.location.reload();
+            });
+    }
+}
+
+window.editarEpisodio = function (id) {
+    window.location.href = 'editEpisode.html?id=' + id + '&serieId=' + serieId + '&temporadaId=' + temporadaId;
 }
