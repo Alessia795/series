@@ -1,0 +1,424 @@
+{
+  "info": {
+    "_postman_id": "236eeb38-9250-416d-af07-4784291dd273",
+    "name": "series",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53980181",
+    "_collection_link": "https://go.postman.co/collection/53980181-236eeb38-9250-416d-af07-4784291dd273?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "series",
+      "item": [
+        {
+          "name": "series",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/series",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "series/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/series/{{id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/series",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"titulo\": \"Titulo de ejemplo\",\r\n    \"descripcion\": \"Descripcion de ejemplo\",\r\n    \"genero\": \"Genero de ejemplo\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/series",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/series/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"titulo\": \"Nueva Serie\",\r\n    \"descripcion\": \"Una nueva serie de televisión emocionante\",\r\n    \"genero\": \"Acción\",\r\n    \"imagen\": \"http://example.com/nueva_serie.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/series/{{serie_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series",
+                "{{serie_mod}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/series/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"titulo\": \"Nueva Serie\",\r\n    \"descripcion\": \"Una nueva serie de televisión emocionante\",\r\n    \"genero\": \"Acción\",\r\n    \"imagen\": \"http://example.com/nueva_serie.jpg\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/series/{{serie_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series",
+                "{{serie_mod}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "season",
+      "item": [
+        {
+          "name": "/series/:id/temporadas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/series/{{id}}/temporadas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "series",
+                "{{id}}",
+                "temporadas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/temporadas/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/temporadas/{{id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "temporadas",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/temporadas",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"serie_id\": 12,\r\n    \"numero_temporada\": 2,\r\n    \"descripcion\": \"Temporada2 ejemplo\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/temporadas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "temporadas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/temporadas/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"numero_temporada\": \"2\",\r\n    \"descripcion\": \"Nueva descripcion\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/temporadas/{{temporada_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "temporadas",
+                "{{temporada_mod}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/temporadas/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"numero_temporada\": \"2\",\r\n    \"descripcion\": \"Nueva descripcion\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/temporadas/{{temporada_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "temporadas",
+                "{{temporada_mod}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "episodes",
+      "item": [
+        {
+          "name": "/temporadas/:id/episodios/",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/temporadas/{{id}}/episodios/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "temporadas",
+                "{{id}}",
+                "episodios",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/episodios/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/episodios/{{id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "episodios",
+                "{{id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/episodios",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"temporada_id\": \"28\",\r\n    \"numero_episodio\": 1,\r\n    \"titulo\": \"Episodio 1\",\r\n    \"duracion_min\": 45,\r\n    \"descripcion\": \"Primer episodio de la temporada.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/episodios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "episodios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/episodios/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"numero_episodio\": \"2\",\r\n    \"titulo\": \"Episodio 2\",\r\n    \"duracion_min\": \"50\",\r\n    \"descripcion\": \"Segundo episodio de la serie\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/episodios/{{episodio_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "episodios",
+                "{{episodio_mod}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/episodios/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"numero_episodio\": \"2\",\r\n    \"titulo\": \"Episodio 2\",\r\n    \"duracion_min\": \"50\",\r\n    \"descripcion\": \"Segundo episodio de la serie\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/episodios/{{episodio_mod}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "episodios",
+                "{{episodio_mod}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "usuarios",
+      "item": [
+        {
+          "name": "/login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
