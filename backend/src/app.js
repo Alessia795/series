@@ -14,7 +14,7 @@ const database = knex({
     client: 'sqlite3',
     connection: {
         filename: 'series.db'
-    }, 
+    },
     useNullAsDefault: true
 });
 
@@ -48,6 +48,12 @@ app.get('/temporadas/:id/episodios/', async (req, res) => {
     res.status(200).json(episodios);
 })
 
+//obtener los episodios por id
+app.get('/episodios/:id', async (req, res) => {
+    const episodio = await database('episodios').where('id', req.params.id).first();
+    res.status(200).json(episodio);
+})
+
 //añadir una nueva serie
 app.post('/series', async (req, res) => {
     await database('series').insert({
@@ -62,6 +68,7 @@ app.post('/series', async (req, res) => {
 //añadir una nueva temporada
 app.post('/temporadas', async (req, res) => {
     await database('temporadas').insert({
+        serie_id: req.body.serie_id,
         numero_temporada: req.body.numero_temporada,
         descripcion: req.body.descripcion
     })
@@ -71,6 +78,7 @@ app.post('/temporadas', async (req, res) => {
 //añadir un nuevo episodio
 app.post('/episodios', async (req, res) => {
     await database('episodios').insert({
+        temporada_id: req.body.temporada_id,
         numero_episodio: req.body.numero_episodio,
         titulo: req.body.titulo,
         duracion_min: req.body.duracion_min,
@@ -114,7 +122,7 @@ app.put('/episodios/:id', async (req, res) => {
 })
 
 //borrar una serie. Hay que tener en cuenta las relaciones
-app.delete('/series/:id', async (req,res) => {
+app.delete('/series/:id', async (req, res) => {
     const id = req.params.id;
 
     //averiguo cuantas temporadas tiene la serie
@@ -154,13 +162,36 @@ app.delete('/temporadas/:id', async (req, res) => {
 app.delete('/episodios/:id', async (req, res) => {
     const id = req.params.id;
 
-    await database('episodios').where('temporadas_id', temporadas_id).delete();
+    await database('episodios').where('id', id).delete();
 
     res.json({});
+})
+
+//obtener los usuarios
+app.post('/login', async (req, res) => {
+    const usuario = await database('usuarios')
+        .where({
+            username: req.body.username,
+            password: req.body.password
+        })
+        .first();
+    if (usuario) {
+        res.status(201).json({
+            ok: true,
+            username: usuario.username,
+            rol: usuario.rol,
+            mensaje: 'Login realizado con exito'
+        });
+    } else {
+        res.status(401).json({
+            ok: false,
+            mensaje: 'Login no realizado, comprueba el usuario y la contraseña'
+        });
+    }
+
 })
 
 //Listener 
 app.listen(8081, () => {
     console.log('El backend ha iniciado en el puerto 8081')
 })
-
