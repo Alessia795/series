@@ -97,6 +97,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     border-bottom: 1px solid #d2af31;
+    width: 300px;
     padding-bottom: 15px;
 }
 
@@ -138,3 +139,130 @@
 .columna-derecha {
     flex: 1;
 }
+
+.login-card {
+    display: grid;
+    background-color: #16213e;
+    width: min(90%, 600px);
+    text-align: center;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #a68510;
+    gap: 15px;
+    justify-content: center;
+}
+
+.login-titulo {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 30px;
+    
+}
+
+.login-input {
+    background-color: #e3eeee;
+    width: 100%;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.login-btn {
+    background-color: #d2af31;
+    width: 90px;
+    color: #1a1a2e;
+    border-radius: 8px;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-error {
+    color: #e94560;
+    text-align: center;
+    font-size: 13px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.navbar-username {
+    color: white;
+    font-size: 14px;
+}
+
+.navbar-boton {
+    background-color: transparent;
+    border: 1px solid #d2af31;
+    color: #d2af31;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-anadir {
+    background-color: #d2af31;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn-anadir:hover {
+    background-color: rgb(107, 200, 107);
+}
+
+.card-botones {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.btn-editar {
+    background-color: #0f3460;
+    color: white;
+    border: 1px solid #d2af31;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-editar:hover {
+    background-color: #d5bb5c;
+}
+
+.btn-borrar {
+    background-color: #0f3460;
+    color: white;
+    border: 1px solid #e94560;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-borrar:hover {
+    background-color: rgb(242, 94, 94);
+}
+
