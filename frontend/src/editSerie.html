@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="editSerie.js"></script>
+    <title>Editar Serie</title>
+    <link rel="icon" type="image/x-icon" href="cinematografico.ico">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="body">
+    <div id="navbar"></div>
+    <h1 class="title">Editar Serie</h1>
+    <div class="login-card">
+        <input class="login-input" type="text" id="titulo" placeholder="Título"/>
+        <input class="login-input" type="text" id="descripcion" placeholder="Descripción"/>
+        <input class="login-input" type="text" id="genero" placeholder="Género"/>
+        <input class="login-input" type="text" id="imagen" placeholder="Nombre imagen (Dark.webp)"/>
+        <div class="container-btn">
+            <button class="login-btn" onclick="editSerie()">Guardar</button>
+            <button class="login-btn" onclick="window.location.href='index.html'">Cancelar</button>
+        </div>
+    </div>
+</body>
+</html>

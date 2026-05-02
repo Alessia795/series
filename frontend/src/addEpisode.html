@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="addEpisode.js"></script>
+    <title>Añadir Episodio</title>
+    <link rel="icon" type="image/x-icon" href="cinematografico.ico">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="body">
+    <div id="navbar"></div>
+    <h1 class="title">Añadir Episodio</h1>
+    <div class="login-card">
+        <input class="login-input" type="integer" id="numero" placeholder="Numero episodio" />
+        <input class="login-input" type="text" id="titulo" placeholder="Titulo" />
+        <input class="login-input" type="integer" id="duracion" placeholder="Duración (min)" />
+        <input class="login-input" type="text" id="descripcion" placeholder="Descripcion" />
+
+        <div class="container-btn">
+            <button class="login-btn" onclick="addEpisode()">Añadir</button>
+            <button class="login-btn" onclick="cancelar()">Cancelar</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
