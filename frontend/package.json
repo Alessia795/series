@@ -1,7 +1,18 @@
 {
     "name": "series-frontend",
     "version": "0.1",
-    "source": "src/index.html",
+    "source": [
+        "src/index.html",
+        "src/season.html",
+        "src/episode.html",
+        "src/login.html",
+        "src/addSerie.html",
+        "src/editSerie.html",
+        "src/addSeason.html",
+        "src/editSeason.html",
+        "src/addEpisode.html",
+        "src/editEpisode.html"
+    ],
     "type": "module",
     "scripts": {
         "start": "parcel --no-cache",
